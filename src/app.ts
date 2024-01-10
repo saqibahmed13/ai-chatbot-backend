@@ -10,7 +10,7 @@ const app = express();
 
 //middlewares
 const corsOptions = {
-    origin: "http://localhost:5173",
+    origin: "https://ai-chatbot-backend-k4od.onrender.com",
     credentials: true,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     allowedHeaders: ["Content-Type", "Authorization"]
