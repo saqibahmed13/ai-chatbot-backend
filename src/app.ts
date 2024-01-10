@@ -10,7 +10,7 @@ const app = express();
 
 //middlewares
 const corsOptions = {
-    origin: "https://ai-chatbot-backend-k4od.onrender.com",
+    origin: "https://react-chat-1999.netlify.app",
     credentials: true,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     allowedHeaders: ["Content-Type", "Authorization"]
