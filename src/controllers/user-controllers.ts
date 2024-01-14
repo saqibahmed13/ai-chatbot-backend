@@ -45,7 +45,7 @@ export const userSignup = async (
     const expires = new Date();
     expires.setDate(expires.getDate() + 7);
 
-    res.cookie(COOKIE_NAME, token, { httpOnly: true, domain:".onrender.com", sameSite: 'lax', secure: true, path:"/"});
+    res.cookie(COOKIE_NAME, token, { httpOnly: true, domain:"localhost", sameSite: 'lax', secure: true, path:"/"});
 
     return res
       .status(201)
@@ -85,14 +85,7 @@ export const userLogin = async (
     const token = createToken(user._id.toString(), user.email, "7d");
     const expires = new Date();
     expires.setDate(expires.getDate() + 7);
-    res.cookie(COOKIE_NAME, token, {
-      path: "/",
-      domain: "localhost",
-      expires,
-      httpOnly: true,
-      signed: true,
-    });
-
+    res.cookie(COOKIE_NAME, token, { httpOnly: true, domain:"localhost", sameSite: 'lax', secure: true, path:"/"});
     return res
       .status(200)
       .json({ message: "OK", name: user.name, email: user.email });
